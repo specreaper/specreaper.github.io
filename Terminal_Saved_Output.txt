@@ -1,0 +1,39 @@
+Last login: Mon Sep  9 09:21:20 on ttys000
+seanevans@Seans-MacBook-Pro-4 ~ % ls
+Applications		Music			django_projects
+BrawlhallaReplays	My Games		e.py
+CSC_222			Pictures		gctaa_dj4e_samples
+Desktop			Public			l.py
+Documents		README.md		s.py
+Downloads		Sites			testrun.db
+Library			cache
+Movies			csprinciples
+seanevans@Seans-MacBook-Pro-4 ~ % date
+Mon Sep  9 11:42:16 EDT 2024
+seanevans@Seans-MacBook-Pro-4 ~ % cd Desktop 
+seanevans@Seans-MacBook-Pro-4 Desktop % mkdir quiz
+seanevans@Seans-MacBook-Pro-4 Desktop % cd quiz 
+seanevans@Seans-MacBook-Pro-4 quiz % vi move_me.txt
+seanevans@Seans-MacBook-Pro-4 quiz % ls
+move_me.txt
+seanevans@Seans-MacBook-Pro-4 quiz % vi copy_me.txt
+seanevans@Seans-MacBook-Pro-4 quiz % mkdir destination
+seanevans@Seans-MacBook-Pro-4 quiz % mv move_me.txt destination 
+seanevans@Seans-MacBook-Pro-4 quiz % ls
+copy_me.txt	destination
+seanevans@Seans-MacBook-Pro-4 quiz % cp copy_me.txt destination 
+seanevans@Seans-MacBook-Pro-4 quiz % ls
+copy_me.txt	destination
+seanevans@Seans-MacBook-Pro-4 quiz % cd destination 
+seanevans@Seans-MacBook-Pro-4 destination % ls
+copy_me.txt	move_me.txt
+seanevans@Seans-MacBook-Pro-4 destination % cd -
+~/Desktop/quiz
+seanevans@Seans-MacBook-Pro-4 quiz % rm copy_me.txt 
+seanevans@Seans-MacBook-Pro-4 quiz % ls
+destination
+seanevans@Seans-MacBook-Pro-4 quiz % date
+Mon Sep  9 11:46:26 EDT 2024
+seanevans@Seans-MacBook-Pro-4 quiz % Export Text As
+zsh: command not found: Export
+seanevans@Seans-MacBook-Pro-4 quiz % 
