@@ -1,2 +1,2 @@
-This is my first entry.
+# This is my Journal!
 
