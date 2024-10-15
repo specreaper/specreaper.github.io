@@ -15,6 +15,6 @@
 
 ## Math
 This is how you make fractions $\frac{x}{y}$
-This is how you do powers $x^2$
+\n This is how you do powers $x^2$
 
 
