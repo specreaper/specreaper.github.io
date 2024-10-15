@@ -12,3 +12,4 @@
 3. Give advice for future students who are interested in learning them
     - Pracitce making using vim in the terminal to make markdown files for other classes and then use git to upload them to your repo.
 
+
