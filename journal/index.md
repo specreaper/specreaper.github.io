@@ -14,7 +14,6 @@
     - Pracitce making using vim in the terminal to make markdown files for other classes and then use git to upload them to your repo.
 
 ## Math
-This is how you make fractions $\frac{x}{y}$
-\n This is how you do powers $x^2$
-
+This is how you make fractions $\frac{x}{y}$ 
+This is how you do powers $x^2$
 
