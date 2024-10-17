@@ -14,7 +14,7 @@
     - Pracitce making using vim in the terminal to make markdown files for other classes and then use git to upload them to your repo.
 
 ## Image
-![This is an image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgratisography.com%2F&psig=AOvVaw2slCRgIRZPa5Onmk7njQBc&ust=1729097480178000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPi27ZvskIkDFQAAAAAdAAAAABAE)
+![This is an image](https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg)
 
 ## Table
 |Tab |les |
