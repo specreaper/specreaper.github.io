@@ -16,6 +16,12 @@
 ## Image
 ![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgratisography.com%2F&psig=AOvVaw2slCRgIRZPa5Onmk7njQBc&ust=1729097480178000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPi27ZvskIkDFQAAAAAdAAAAABAE)
 
+## Table
+|Tab |les |
+|----|----|
+|A   |re  |
+|Co  |ol  |
+
 ## Math
 This is how you make fractions $\frac{x}{y}$ 
 This is how you do powers $x^2$
