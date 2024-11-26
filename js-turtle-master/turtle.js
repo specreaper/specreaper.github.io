@@ -29,26 +29,20 @@ function square(size,x,y){
     penup();
     goto(x,y);
     pendown();
-    forward(size);
-    right(90);
-    forward(size);
-    right(90);
-    forward(size);
-    right(90);
-    forward(size);
-    right(90);
+    for(i=0,i<4,i++){
+        forward(size);
+        right(90);
+    }
 }
 
 function triangle(size,x,y){
     penup();
     goto(x,y);
     pendown();
-    forward(size);
-    right(120);
-    forward(size);
-    right(120);
-    forward(size);
-    right(120);
+    for(i=0,i<3,i++){
+        forward(size);
+        right(120);
+    }
 }
 
 square(100,0,0);
