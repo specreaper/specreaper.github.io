@@ -1,0 +1,10 @@
+body {
+    background-color:yellow;
+}
+header {
+    background-color:orange;
+}
+th td table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
