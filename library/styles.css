@@ -1,10 +1,14 @@
 body {
-    background-color:blue;
+    background-color:lightblue;
 }
 header {
+    border:1px solid #ff5050;
+    h1 {
+        color: #ff5050;
+    }
 }
 th, td, table {
-    border: 1px solid;
+    border: 1px solid rgb(250, 50, 50);
     border-collapse: collapse;
 }
 
