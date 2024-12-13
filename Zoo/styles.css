@@ -1,5 +1,8 @@
 body {
     background-color:yellow;
+    text-transform:lowercase;
+    font-family: "Fantasy", "Cursive";
+    text-align: center; 
 }
 header {
     background-color:orange;
@@ -7,5 +10,8 @@ header {
 th, td, table {
     border: 1px solid;
     border-collapse: collapse;
+    text-transform:uppercase;
+    font-family: "Times New Roman", sans-serif;
+    text-align: center;
 }
 
