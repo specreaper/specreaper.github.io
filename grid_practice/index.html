@@ -1,26 +1,47 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <title>GRIDS!</title>
     <script src="../js/init.js"></script>
 <style>
 .grid{
     display:grid;
-    grid-template-rows: repeat(8 1fr);
-    grid-template-columns: repeat(8 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     height:80vh;
     text-align:center;
     font-size:4em;
     gap:10px;
 }
 .main{
-    grid-area: 3/3/6/6;
+    grid-area: 2/3/7/7;
+    background-color:green;
+}
+.side1{
+    grid-area: 2/1/7/3;
+    background-color:green;
+}
+.side2{
+    grid-area: 2/7/7/9;
+    background-color:green;
+}
+.header{
+    grid-area: 1/1/2/9;
+    background-color:green;
+}
+.foot{
+    grid-area: 7/1/8/9;
     background-color:green;
 }
 </style>
 </head>
 <body>
     <div class="grid">
-        <div class="green"></div>
+        <div class="main"></div>
+        <div class="foot"></div>
+        <div class="side1"></div>
+        <div class="side2"></div>
+        <div class="header"></div>
     </div>
 </body>
 </html>
