@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>GRIDS!</title>
-    <script src="../js/init.js"></script>
+    <title>Smiley</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="js/init.js"></script>
 <style>
 .grid{
     display:grid;
@@ -10,13 +11,51 @@
     grid-template-columns: repeat(8, 1fr);
     height:80vh;
     text-align:center;
-    font-size:4em;
-    gap:10px;
+}
+.s1{
+    grid-area: 7/4/8/6;
+    background-color:red;
+}
+.s2{
+    grid-area: 6/3/7/4;
+    background-color:red;
+}
+.s3{
+    grid-area: 6/6/7/7;
+    background-color:red;
+}
+.s4{
+    grid-area: 5/2/6/3;
+    background-color:red;
+}
+.s5{
+    grid-area: 5/7/6/8;
+    background-color:red;
+}
+.s6{
+    grid-area: 2/3/4/4;
+    background-color:red;
+}
+.s7{
+    grid-area: 2/6/4/7;
+    background-color:red;
 }
 </style>
 </head>
 <body>
-    <div class="grid">
-    </div>
+	<h1>This is Simely</h1>
+	<div class="grid">
+	    <div class="s1"></div>
+	    <div class="s2"></div>
+	    <div class="s3"></div>
+	    <div class="s4"></div>
+	    <div class="s5"></div>
+	    <div class="s6"></div>
+	    <div class="s7"></div>
+	</div>
+	<ul>
+	    <li><a href="index.html">Home</a></li>
+	    <li><a href="art.html">Art</a></li>
+	</ul>
 </body>
 </html>
