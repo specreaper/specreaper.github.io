@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Sixtyfour+Convergence&display=swap');
+h1, h2 {
+	background-color: #FFc107;
+        font-family: "Sixtyfour Convergence", sans-serif; 
+}
+body {
+        background-color: #B2EBF2;
+        font-family: "Jersey 15", sans-serif;
+}
+th, td, table {
+        border: 2px solid red;
+        border-collapse: collapse;
+        font-family: "Jersey 15", sans-serif;
+        text-align: center;
+}
+

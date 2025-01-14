@@ -7,7 +7,7 @@ body {
 	font-family: "Times New Roman", sans-serif;
 }
 th, td, table {
-	border: 1px solid;
+	border: 2px solid;
 	border-collapse: collapse;
 	font-family: "Times New Roman", sans-serif;
 	text-align: center;
