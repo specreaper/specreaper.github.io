@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <title>Welcome my Project Hub</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="js/init.js"></script>
+	<style>
+	    .grid{
+    		display:grid;
+    		grid-template-rows: repeat(8, 1fr);
+    		grid-template-columns: repeat(8, 1fr);
+    		height:80vh;
+    		text-align:center;
+    		font-size: 4em;
+    		gap:10px;
+	    }
+	    .nav_links{
+		grid-area: 1/1/2/9;
+	    }
+    </head>
+    <body>
+    	    <div class="grid">
+	    	<div class="nav_links">
+		    <h2><u>Nav Links</u></h2>
+            	    <ul>
+                    	<li><a href="index.html">Home</a></li>
+                       	<li><a href="art.html">Art</a></li>
+                       	<li><a href="projects_hub.html">Projects</a></li>
+            	    </ul>
+	    	</div>
+	    </div>
+    </body>
+</html>
+
