@@ -7,19 +7,19 @@
 	<body>
 		<h1>You're Invited to an Ice Cream Party!</h1>
 		<form action="https://httpbin.org/post" method="POST">
-			<p>What is your email address?</p>
+			<p><strong>What is your email address?</strong></p>
 			<input type="email" id="email" name="email" placeholder="Your answer" required>
 			<br>
 			
-			<p>What is your phone number?</P>
+			<p><strong>What is your phone number?</strong></P>
 			<input type="text" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Your answer" required>
 			<br>
 			
-			<p>How many people will you bring with you to the party?</p>
+			<p><strong>How many people will you bring with you to the party?</strong></p>
                         <input type="number" name="people" min="0" placeholder="Your answer" required>
 			<br>
 
-			<p>What is your favorite flavor of ice cream?</p>
+			<p><strong>What is your favorite flavor of ice cream?</strong></p>
   			<label for="Vanilla">Vanilla</label>
   			<input type="radio" id="Vanilla" name="Vanilla" value="Vanilla">
 			<br>
@@ -33,7 +33,7 @@
                         <input type="radio" id="Other1" name="Other" value="Other">
 			<br>
 
-			<p>Which toppings do you like?</p>
+			<p><strong>Which toppings do you like?</strong></p>
 			<label for="Sprinkles">Sprinkles</label>
   			<input type="checkbox" id="Sprinkles" name="Sprinkles">
 			<br>
@@ -50,7 +50,7 @@
                         <input type="checkbox" id="Other2" name="Other">
 			<br>
 			
-			<p>What kind of entertainment should we have at the party?</p>
+			<p><strong>What kind of entertainment should we have at the party?</strong></p>
 			<select name="entertainment" id="entertainment">
 				<option value="Choose">Choose</option>
 				<option value="Balloon Animals">Balloon Animals</option>
@@ -63,9 +63,10 @@
 			</select>
 			<br>
 
-			<p>Do you have any other suggzzestions or comments?</P>
+			<p><strong>Do you have any other suggzzestions or comments?</strong></P>
                         <input type="text" name="suggestion" placeholder="Your answer">
                         <br>
+			<br>
 
 			<input type="submit" name="submit">
 		</form>
