@@ -1,24 +1,32 @@
 #imageA {
-	width="200";
-        height="250";
+	width= 100px;
+        height=150px;
 	object-position: center top;
-	border: 2px solid;
-	filter: grayscale(50%);
+	border: 5px solid;
+	filter: grayscale(80%);
 }
 #imageB {
-	min-width: 80%;
-	min-height: 80%;
-	max-width: 120%;
-  	max-height: 120%;
+	min-width: 60%;
+	min-height: 60%;
+	max-width: 70%;
+  	max-height: 70%;
 	object-fit: contain;
-	border-radius: 20px;
-	box-shadow: 10px rgba(0, 0, 0, 0.5);
+	border-radius: 30px;
+	box-shadow: 20px 25px 30px rgba(0, 0, 0, 0.5);
 	filter: hue-rotate(90deg);
 }
 #imageC {
-        
+	width= 100px;
+        height=150px;
+	z-index: 1;
+	position: static;
+	opacity: 50%;	
 }  
 #imageD {
+	width= 100px;
+        height=150px;
+	z-index: 2;
+	position: static;
 
 }
 
