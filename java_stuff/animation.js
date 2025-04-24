@@ -1,8 +1,9 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-int x = 0;
-int y = 0;
+let x = 0;
+let y = 0;
+
 //define functions
 function drawRect(x,y) {
     console.log("drawing rect");
