@@ -1,10 +1,12 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-let x = 0;
-let y = 0;
+let x = 200;
+let y = 200;
+let dx = 2;
+let dy = 3;
+const moveSpeed = 3;
 
-//define functions
 function drawRect(x,y) {
     console.log("drawing rect");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -12,19 +14,38 @@ function drawRect(x,y) {
     ctx.fillRect(x,y,50,50);
     ctx.fill();
 }
-
+function 
+function updateObjectPosition() {
+            if (keys['w']) {
+                objectY -= moveSpeed;
+            }
+            if (keys['s']) {
+                objectY += moveSpeed;
+            }
+            if (keys['a']) {
+                objectX -= moveSpeed;
+            }
+            if (keys['d']) {
+                objectX += moveSpeed;
+            }
+}
 function animate() {
-    	x = x + 1;
-	y = y + 1; 
+    	x += dx;
+	y += dy; 
 	drawRect(x,y);
 
-	if(x>=350){
-		x = x - 350;
+	if(x>=canvas.width-50){
+		dx *= -1;
 	}
-
-	if(y>=350){
-                y = y - 350;
+	if (y>=canvas.height-50){
+                dy *= -1;
         }
+	if (x<=0) {
+		dx *= -1;
+	}
+	if (y<=0) {
+		dy *= -1;
+	}
 
     requestAnimationFrame(animate);
 }
