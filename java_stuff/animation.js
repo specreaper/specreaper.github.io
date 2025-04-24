@@ -13,13 +13,17 @@ function drawRect(x,y) {
 }
 
 function animate() {
-    	x = x + 0;
+    	x = x + 1;
 	y = y + 1; 
 	drawRect(x,y);
 
 	if(x>=350){
 		x = x - 350;
 	}
+
+	if(y>=350){
+                y = y - 350;
+        }
 
     requestAnimationFrame(animate);
 }
