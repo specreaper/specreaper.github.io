@@ -1,25 +1,30 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-let x = 200;
+let x = 0;
 let dx = (Math.random() * 5);
-let y = 200;
+let y = 0;
 let dy = (Math.random() * 5); 
+let score = 0;
 
 const player = {
     x : 60,
     y : 60,
     color: 'green',
     speed: 3
-};
+}
+
+const enemy = {
+    x : 200,
+    y : 200,
+}
 
 const keys = {};
 
 function drawRect(x,y) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'blue';
-    ctx.fillRect(x,y,50,50);
-    ctx.fill();
+    ctx.fillRect(enemy.x,enemy.y,50,50);
 }
 
 function drawPlayer(){
@@ -48,28 +53,38 @@ function movePlayer(){
     if(keys['d']){
         player.x += player.speed;
     }
+    if(keys['s'] && player.y > 400){
+    	player.y = 0;
+    }
+    if(keys['w'] && player.y < 0){
+    	player.y = 400;
+    } 
 }
 
 function moveEnemy(){
-    x = x + dx;
-    y = y + dy;
+    enemy.x += dx;
+    enemy.y += dy;
 
-    if(x > 400){
+    if(enemy.x > 400){
         dx = dx * -1;
     }
-    if(x < 0){
+    if(enemy.x < 0){
         dx = dx * -1;
     }
 
-    if(y > 400){
+    if(enemy.y > 400){
         dy = dy * -1;
     }
-    if(y < 0){
+    if(enemy.y < 0){
         dy = dy * -1;
     }
 }
 
+function drawScore(){
+}
+
 function animate() {
+    score++;
     drawRect(x,y);
     movePlayer();
     drawPlayer();
