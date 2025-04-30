@@ -12,7 +12,7 @@ const player = {
     x : 60,
     y : 60,
     color: 'green',
-    speed: 3
+    speed: 3,
 }
 
 const enemy = {
