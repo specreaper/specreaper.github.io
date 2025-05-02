@@ -1,12 +1,12 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-let gamerunning = true;
 let x = 0;
 let dx = (Math.random() * 5);
 let y = 0;
 let dy = (Math.random() * 5); 
 let score = 0;
+let gamerunning = true;
 
 const player = {
     x : 60,
@@ -72,10 +72,11 @@ function moveEnemy(){
     if(enemy.x < 0){
         dx = dx * -1;
     }
-
-    }
     if(enemy.y < 0){
         dy = dy * -1;
+    }
+    if(enemy.y > 400){
+	dy = dy * -1;
     }
 }
 
@@ -90,7 +91,7 @@ let ey_max = enemy.y + 50;
 let ey_min = enemy.y;
 
 function hit(){
-	if(px_max < ex_max && px_min > ex_min && py_max < ey_max && py_min > ey_min) {
+	if(px_min < ex_max && px_max > ex_min && py_min < ey_max && py_max > ey_min) {
 		gamerunning = false;
 	}
 }
@@ -103,7 +104,8 @@ function drawScore(){
 function animate() {
 	if(gamerunning){
 		score++;
-		drawScore()
+		hit();
+		drawScore();
     		drawRect(x,y);
     		movePlayer();
     		drawPlayer();
