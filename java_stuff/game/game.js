@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 let x = 0;
 let y = 0;
-let dy = (Math.random() * 5); 
+let dy = (Math.random() * 5) + 1; 
 let score = 0;
 let gamerunning = true;
 
@@ -66,7 +66,7 @@ function moveEnemy(){
 
     if(enemy.y > 400){
 	enemy.y = 0;
-	dy = (Math.random() * 5);
+	dy = (Math.random() * 5) + 2;
 	enemy.x = (Math.random() * 400);
     }
 }

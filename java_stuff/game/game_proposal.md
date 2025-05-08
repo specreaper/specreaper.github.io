@@ -8,6 +8,9 @@
 - The falling objects will be anvils
 - The character you will be playing as is going to be a chicken jocky
 
-## Part 3: conclusion
+## Part 3: summery
 - The overall idea is to create a game thats has a Minecraft where you have survive as long as possible while dodging falling objects.
+
+## Part 4: MVP
+- When we have a working player, conclision, and falling object that resests itself.
 
