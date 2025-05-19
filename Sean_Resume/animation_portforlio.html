@@ -17,12 +17,6 @@
 	.header{
 		grid-area: 1/1/2/3;
 	}
-	.animation{
-            	grid-area: 2/1/12/2;
-	}
-	.text{
-		grid-area: 2/2/12/3;
-	}
 	</style>
     </head>
     <body>
@@ -35,13 +29,21 @@
                         	</div>
 				<hr>
 			</div>
-			<div class="animation">
-                        	<img src="Evans_Car_Render.jpg" alt="Car_Render.jpg" style="width: 95%; display: block; margin: auto; grid-area: 1/1/2/2; "/>
-				<img src="Evans_Alien_Render.jpg" alt="Alien_Render.jpg" style="width: 95%; display: block; margin: auto; grid-area: 2/1/3/2; "/>
+			<div style="grid-area: 2/1/3/2;">
+                        	<img src="Evans_Car_Render.jpg" alt="Car_Render.jpg" style="width: 95%; display: block; margin: auto; "/>
 			</div>
-			<div class="text">
-				<p>This is my alien render</p>
-                        </div>
-	    </div>
-    </body>
+			<div style="grid-area: 4/1/5/2;">
+				<img src="Evans_Submarine_Render.jpg" alt="Submarine_Render.jpg" style="width: 95%; display: block; margin: auto; grid-area: 2/1/3/2; "/>
+			</div>
+			<div style="grid-area: 5/1/6/2;">
+				<img src="Evans_Christmas_Tree_Render.jpg" alt="Christmas_Tree_Render.jpg" style="width: 95%; display: block; margin: auto; grid-area: 3/1/4/2; "/>
+			</div>
+				<!-- 
+				<img src="Evans_Alien_Render.jpg" alt="Alien_Render.jpg" style="width: 95%; display: block; margin: auto; grid-area: 4/1/5/2; "/>
+				<div style="grid-area: ;">
+                                <img src="" alt="" style="width: 95%; display: block; margin: auto; grid-area: 2/1/3/2; "/>
+                        	</div>
+				-->
+    		</div>
+	</body>
 </html>
