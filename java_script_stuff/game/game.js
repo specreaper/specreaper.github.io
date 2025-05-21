@@ -10,7 +10,6 @@ let gamerunning = true;
 const player = {
     	x : 200,
     	y : 300,
-    	color: 'green',
     	speed: 3,
 }
 
@@ -22,7 +21,7 @@ const enemy = {
 
 const keys = {};
 
-function drawRect(x,y) {
+function drawEnemy(x,y) {
 	ctx.fillStyle = enemy.color;
 	ctx.fillRect(enemy.x,enemy.y,50,20);
 	ctx.fillRect(enemy.x+15,enemy.y+20,20,5);
@@ -30,16 +29,10 @@ function drawRect(x,y) {
 }
 
 function drawPlayer(){
-    ctx.fillStyle = player.color;
-    ctx.beginPath();
-    ctx.arc(
-        player.x, //accessing the variable called x inside the player object
-        player.y,
-        20,
-        0,
-        2*Math.PI
-    );
-    ctx.fill();
+    	
+	//ctx.beginPath();
+    	//ctx.arc(player.x, player.y, 20, 0, 2*Math.PI);
+    	//ctx.fill();
 }
 
 function movePlayer(){
@@ -83,14 +76,21 @@ function hit(){
 	let py_max = player.y + 20;
 	let py_min = player.y - 20;
 
-	let ex_max = enemy.x + 50;
-	let ex_min = enemy.x;
-	let ey_max = enemy.y + 40;
-	let ey_min = enemy.y;
+	let ex_max1 = enemy.x + 50;
+	let ex_min1 = enemy.x;
+	let ey_max1 = enemy.y + 20;
+	let ey_min1 = enemy.y;
+	let ex_max2 = enemy.x + 40;
+        let ex_min2 = enemy.x + 10;
+        let ey_max2 = enemy.y + 40;
+        let ey_min2 = enemy.y + 20;
 
-	if(px_min < ex_max && px_max > ex_min && py_min < ey_max && py_max > ey_min) {
+	if(px_min < ex_max1 && px_max > ex_min1 && py_min < ey_max1 && py_max > ey_min1) {
 		gamerunning = false;
 	}
+	if(px_min < ex_max2 && px_max > ex_min2 && py_min < ey_max2 && py_max > ey_min2) {
+                gamerunning = false;
+        }
 }
 
 function drawScore(){
@@ -111,7 +111,7 @@ function animate() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		score++;
 		hit();
-    		drawRect(x,y);
+    		drawEnemy();
     		movePlayer();
     		drawPlayer();
     		moveEnemy();
@@ -120,11 +120,11 @@ function animate() {
 	else{
 		drawGameOver();
 	}
-    requestAnimationFrame(animate);
+    	requestAnimationFrame(animate);
 }
 
 function handleKeyPress(e){
-    keys[e.key] = true;
+    	keys[e.key] = true;
 }
 
 
