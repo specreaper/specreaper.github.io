@@ -8,22 +8,25 @@ let score = 0;
 let gamerunning = true;
 
 const player = {
-    x : 200,
-    y : 300,
-    color: 'green',
-    speed: 3,
+    	x : 200,
+    	y : 300,
+    	color: 'green',
+    	speed: 3,
 }
 
 const enemy = {
-    x : (Math.random() * 400),
-    y : 0,
+    	x : (Math.random() * 400),
+	y : 0,
+	color: 'silver',
 }
 
 const keys = {};
 
 function drawRect(x,y) {
-    ctx.fillStyle = 'blue';
-    ctx.fillRect(enemy.x,enemy.y,50,50);
+	ctx.fillStyle = enemy.color;
+	ctx.fillRect(enemy.x,enemy.y,50,20);
+	ctx.fillRect(enemy.x+15,enemy.y+20,20,5);
+	ctx.fillRect(enemy.x+10,enemy.y+25,30,15);
 }
 
 function drawPlayer(){
@@ -40,24 +43,28 @@ function drawPlayer(){
 }
 
 function movePlayer(){
-    if(keys['s']){
-        player.y += player.speed;
-    }
-    if(keys['w']){
-        player.y -= player.speed;
-    }
-    if(keys['a']){
-        player.x -= player.speed;
-    }
-    if(keys['d']){
-        player.x += player.speed;
-    }
-    if(keys['d'] && player.x > 400){
-    	player.x = 0;
-    }
-    if(keys['a'] && player.x < 0){
-    	player.x = 400;
-    } 
+    	if(keys['s']){
+    		player.y += player.speed;
+    	}
+    	if(keys['w']){
+        	player.y -= player.speed;
+    	}
+    	if(keys['a']){
+        	player.x -= player.speed;
+    	}
+    	if(keys['d']){
+        	player.x += player.speed;
+    	}
+    	if(keys['d'] && player.x > 500){
+    		player.x = 0;
+    	}
+	if(keys['a'] && player.x < 0){
+	    player.x = 500;
+  	}
+	if(keys['s'] && player.y >= 500){
+        	player.y -= player.speed;
+    	}
+
 }
 
 function moveEnemy(){
@@ -72,13 +79,13 @@ function moveEnemy(){
 
 function hit(){
 	let px_max = player.x + 20;
-	let px_min = player.x;
+	let px_min = player.x - 20;
 	let py_max = player.y + 20;
-	let py_min = player.y;
+	let py_min = player.y - 20;
 
 	let ex_max = enemy.x + 50;
 	let ex_min = enemy.x;
-	let ey_max = enemy.y + 50;
+	let ey_max = enemy.y + 40;
 	let ey_min = enemy.y;
 
 	if(px_min < ex_max && px_max > ex_min && py_min < ey_max && py_max > ey_min) {
@@ -87,14 +94,16 @@ function hit(){
 }
 
 function drawScore(){
-    ctx.font = "30px Arial";
-    ctx.fillText(Math.floor(score/60), 10,30);
+	ctx.fillStyle = 'black';
+	ctx.font = "30px Arial";
+	ctx.fillText(Math.floor(score/60), 10,30);
 }
 
 function drawGameOver(){
-    ctx.font = "50px Arial";
-    ctx.fillText("GAME OVER", 100,200);
-    ctx.fillText("your score is: " + Math.floor(score/60), 100,260);
+	ctx.fillStyle = 'red';
+	ctx.font = "50px Arial";
+	ctx.fillText("GAME OVER", 100,200);
+	ctx.fillText("your score is: " + Math.floor(score/60), 100,260);
 }
 
 function animate() {
