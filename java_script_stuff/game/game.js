@@ -29,14 +29,39 @@ function drawEnemy(x,y) {
 }
 
 function drawPlayer(){
- 	ctx.fillStyle = 'white';
-	ctx.fillRect(player.x,player.y,30,20);
-	ctx.fillRect(player.x+25,player.y-10,10,20);
-	ctx.fillStyle = 'orange';
-	ctx.fillRect(player.x+35,player.y-5,10,5);
-	ctx.fillStyle = 'yellow';
-	ctx.fillRect(player.x+15,player.y+20,5,15);
-	ctx.fillRect(player.x+15,player.y+30,10,5);
+	//Facing Right
+	if(keys['d']){
+ 		ctx.fillStyle = 'white';
+		ctx.fillRect(player.x,player.y,30,20);
+		ctx.fillRect(player.x+25,player.y-10,10,20);
+		ctx.fillStyle = 'orange';
+		ctx.fillRect(player.x+35,player.y-5,10,5);
+		ctx.fillStyle = 'yellow';
+		ctx.fillRect(player.x+15,player.y+20,5,15);
+		ctx.fillRect(player.x+15,player.y+30,10,5);
+	}
+	//Facing Left
+	else if(keys['a']){
+		ctx.fillStyle = 'white';
+                ctx.fillRect(player.x,player.y,30,20);
+                ctx.fillRect(player.x-5,player.y-10,10,20);
+                ctx.fillStyle = 'orange';
+                ctx.fillRect(player.x-15,player.y-5,10,5);
+                ctx.fillStyle = 'yellow';
+                ctx.fillRect(player.x+15,player.y+20,5,15);
+                ctx.fillRect(player.x+5,player.y+30,10,5);
+	}
+	//Facing Default
+	else{
+		ctx.fillStyle = 'white';
+                ctx.fillRect(player.x,player.y,30,20);
+                ctx.fillRect(player.x+25,player.y-10,10,20);
+                ctx.fillStyle = 'orange';
+                ctx.fillRect(player.x+35,player.y-5,10,5);
+                ctx.fillStyle = 'yellow';
+                ctx.fillRect(player.x+15,player.y+20,5,15);
+                ctx.fillRect(player.x+15,player.y+30,10,5);
+	}
 }
 
 function drawBackground(){
@@ -65,7 +90,7 @@ function movePlayer(){
 	if(keys['a'] && player.x < 0){
 	    player.x = 500;
   	}
-	if(keys['s'] && player.y >= 500){
+	if(keys['s'] && player.y >= 400){
         	player.y -= player.speed;
     	}
 
@@ -82,15 +107,23 @@ function moveEnemy(){
 }
 
 function hit(){
+	//Facing Right Hitbox
 	let px_max1 = player.x + 30;
 	let px_min1 = player.x;
 	let py_max1 = player.y + 20;
 	let py_min1 = player.y;
 	let px_max2 = player.x + 35;
         let px_min2 = player.x + 25;
-        let py_max2 = player.y + 20;
+        let py_max2 = player.y + 10;
         let py_min2 = player.y - 10;
+	let px_max3 = player.x + 25;
+        let px_min3 = player.x + 15;
+        let py_max3 = player.y + 20;
+        let py_min3 = player.y + 40;
 
+	//Facing Left Hitbox
+
+	//Enemy Hitbox
 	let ex_max1 = enemy.x + 50;
 	let ex_min1 = enemy.x;
 	let ey_max1 = enemy.y + 20;
@@ -99,26 +132,53 @@ function hit(){
         let ex_min2 = enemy.x + 10;
         let ey_max2 = enemy.y + 40;
         let ey_min2 = enemy.y + 20;
-
-	if(px_min1 < ex_max1 && px_max1 > ex_min1 && py_min1 < ey_max1 && py_max1 > ey_min1) {
-		gamerunning = false;
+	
+	//Collision For Facing Right
+	if(keys['d']){	
+		if(px_min1 < ex_max1 && px_max1 > ex_min1 && py_min1 < ey_max1 && py_max1 > ey_min1) {
+			gamerunning = false;
+		}
+		if(px_min1 < ex_max2 && px_max1 > ex_min2 && py_min1 < ey_max2 && py_max1 > ey_min2) {
+                	gamerunning = false;
+        	}
+		if(px_min2 < ex_max1 && px_max2 > ex_min1 && py_min2 < ey_max1 && py_max2 > ey_min1) {
+        	        gamerunning = false;
+        	}
+        	if(px_min2 < ex_max2 && px_max2 > ex_min2 && py_min2 < ey_max2 && py_max2 > ey_min2) {
+        	        gamerunning = false;
+        	}
+		if(px_min3 < ex_max1 && px_max3 > ex_min1 && py_min3 < ey_max1 && py_max3 > ey_min1) {
+                        gamerunning = false;
+                }
+                if(px_min3 < ex_max2 && px_max3 > ex_min2 && py_min3 < ey_max2 && py_max3 > ey_min2) {
+                        gamerunning = false;
+                }
 	}
-	if(px_min1 < ex_max2 && px_max1 > ex_min2 && py_min1 < ey_max2 && py_max1 > ey_min2) {
-                gamerunning = false;
-        }
-	if(px_min2 < ex_max1 && px_max2 > ex_min1 && py_min2 < ey_max1 && py_max2 > ey_min1) {
-                gamerunning = false;
-        }
-        if(px_min2 < ex_max2 && px_max2 > ex_min2 && py_min2 < ey_max2 && py_max2 > ey_min2) {
-                gamerunning = false;
-        }
-	//if(px_min < ex_max1 && px_max > ex_min1 && py_min < ey_max1 && py_max > ey_min1) {
-                //gamerunning = false;
-        //}
-        //if(px_min < ex_max2 && px_max > ex_min2 && py_min < ey_max2 && py_max > ey_min2) {
-                //gamerunning = false;
-        //}
-
+	//Collision For Facing Right
+	else if(keys['a']){
+	
+	}
+	//Collision For Facing Default
+	else{
+		if(px_min1 < ex_max1 && px_max1 > ex_min1 && py_min1 < ey_max1 && py_max1 > ey_min1) {
+                        gamerunning = false;
+                }
+                if(px_min1 < ex_max2 && px_max1 > ex_min2 && py_min1 < ey_max2 && py_max1 > ey_min2) {
+                        gamerunning = false;
+                }
+                if(px_min2 < ex_max1 && px_max2 > ex_min1 && py_min2 < ey_max1 && py_max2 > ey_min1) {
+                        gamerunning = false;
+                }
+                if(px_min2 < ex_max2 && px_max2 > ex_min2 && py_min2 < ey_max2 && py_max2 > ey_min2) {
+                        gamerunning = false;
+                }
+                if(px_min3 < ex_max1 && px_max3 > ex_min1 && py_min3 < ey_max1 && py_max3 > ey_min1) {
+                        gamerunning = false;
+                }
+                if(px_min3 < ex_max2 && px_max3 > ex_min2 && py_min3 < ey_max2 && py_max3 > ey_min2) {
+                        gamerunning = false;
+                }
+	}
 }
 
 function drawScore(){
