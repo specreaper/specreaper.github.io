@@ -29,10 +29,19 @@ function drawEnemy(x,y) {
 }
 
 function drawPlayer(){
-    	
-	//ctx.beginPath();
-    	//ctx.arc(player.x, player.y, 20, 0, 2*Math.PI);
-    	//ctx.fill();
+ 	ctx.fillStyle = 'white';
+	ctx.fillRect(player.x,player.y,30,20);
+	ctx.fillRect(player.x+25,player.y-10,10,20);
+	ctx.fillStyle = 'orange';
+	ctx.fillRect(player.x+35,player.y-5,10,5);
+	ctx.fillStyle = 'yellow';
+	ctx.fillRect(player.x+15,player.y+20,5,15);
+	ctx.fillRect(player.x+15,player.y+30,10,5);
+}
+
+function drawBackground(){
+	ctx.fillStyle = 'cyan';
+	ctx.fillRect(0,0,500,500);
 }
 
 function movePlayer(){
@@ -110,6 +119,7 @@ function animate() {
 	if(gamerunning){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		score++;
+		drawBackground();
 		hit();
     		drawEnemy();
     		movePlayer();
