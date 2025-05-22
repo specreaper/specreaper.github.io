@@ -42,6 +42,8 @@ function drawPlayer(){
 function drawBackground(){
 	ctx.fillStyle = 'cyan';
 	ctx.fillRect(0,0,500,500);
+	ctx.fillStyle = 'green';
+	ctx.fillRect(0,400,500,100);
 }
 
 function movePlayer(){
@@ -80,10 +82,14 @@ function moveEnemy(){
 }
 
 function hit(){
-	let px_max = player.x + 20;
-	let px_min = player.x - 20;
-	let py_max = player.y + 20;
-	let py_min = player.y - 20;
+	let px_max1 = player.x + 30;
+	let px_min1 = player.x;
+	let py_max1 = player.y + 20;
+	let py_min1 = player.y;
+	let px_max2 = player.x + 35;
+        let px_min2 = player.x + 25;
+        let py_max2 = player.y + 20;
+        let py_min2 = player.y - 10;
 
 	let ex_max1 = enemy.x + 50;
 	let ex_min1 = enemy.x;
@@ -94,12 +100,25 @@ function hit(){
         let ey_max2 = enemy.y + 40;
         let ey_min2 = enemy.y + 20;
 
-	if(px_min < ex_max1 && px_max > ex_min1 && py_min < ey_max1 && py_max > ey_min1) {
+	if(px_min1 < ex_max1 && px_max1 > ex_min1 && py_min1 < ey_max1 && py_max1 > ey_min1) {
 		gamerunning = false;
 	}
-	if(px_min < ex_max2 && px_max > ex_min2 && py_min < ey_max2 && py_max > ey_min2) {
+	if(px_min1 < ex_max2 && px_max1 > ex_min2 && py_min1 < ey_max2 && py_max1 > ey_min2) {
                 gamerunning = false;
         }
+	if(px_min2 < ex_max1 && px_max2 > ex_min1 && py_min2 < ey_max1 && py_max2 > ey_min1) {
+                gamerunning = false;
+        }
+        if(px_min2 < ex_max2 && px_max2 > ex_min2 && py_min2 < ey_max2 && py_max2 > ey_min2) {
+                gamerunning = false;
+        }
+	//if(px_min < ex_max1 && px_max > ex_min1 && py_min < ey_max1 && py_max > ey_min1) {
+                //gamerunning = false;
+        //}
+        //if(px_min < ex_max2 && px_max > ex_min2 && py_min < ey_max2 && py_max > ey_min2) {
+                //gamerunning = false;
+        //}
+
 }
 
 function drawScore(){
