@@ -1,5 +1,6 @@
 # Guide to Terminal
 <hr>
+
 ## Navigation <br>
 - ls : this lists all non hidden files and directories.
 - ls -a : this lists all files and directories including hidden ones.
