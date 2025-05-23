@@ -26,7 +26,7 @@
 - git add "file name" : this stages the files you want to upload to your git repository. (step 1)
 - git commit -m "anything here" : this readies up the files you chose and names the commit. (step 2)
 - git push : this uploads the files to your git repository. (step 3)
-- git pull : this pulls files and directories from your git repository and puts them onto your computer. (do not confuse this with downloading git repositories onto your computer)
+- git pull : this pulls files and directories from the git repository you are currently in and puts them onto your computer. (do not confuse this with downloading git repositories onto your computer)
 
 ## Tips <br>
 **More will be added in the future**
