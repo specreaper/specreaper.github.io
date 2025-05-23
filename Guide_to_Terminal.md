@@ -42,4 +42,5 @@
 **The following are suggestions for what to add to your .gitignore file**
 1. .DS_Store
 2. *.swp
+3. __pycache__
 
