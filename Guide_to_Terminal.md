@@ -6,7 +6,7 @@
 - ls -a : this lists all files and directories including hidden ones.
 
 ## Files <br>
-- vi/vim  "file name" : this creates and opens files and what I mean by vi/vim is you can type there vi or vim its up to prefrence.
+- vi/vim  "file name" : this creates and opens files and what I mean by vi/vim is you can type there vi or vim its up to prefrence they do the same thing.
 - rm "file name" : this removes files.
 - mv "file name" "file name"/"directory name" : this will rename a file or move a file.
 
