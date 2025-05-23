@@ -32,13 +32,13 @@
 **More will be added in the future**
 - tab : this is your friend and also its auto complete.
 ### .vimrc
-- Make a .vimrc file to customize your terminal too look how you want.
+- Make a .vimrc file to customize your terminal too look how you want. <br>
 **The following are suggestions for what to add to your .vimrc file**
 1. syntax enable : this will make code change to different colors depending what they are like fuctions have a different color from numbers etc it just helps with decerning stuff and makes it more visully pleasing.
 2. set background=dark : this turns your terminal to dark mode if you perfer it over the defualt light mode.
 
 ### .gitignore
-- Make a .gitignore file in your repository so you can stop the creation of files that terminal makes so it doesn't clog up your git repository.
+- Make a .gitignore file in your repository so you can stop the creation of files that terminal makes so it doesn't clog up your git repository. <br>
 **The following are suggestions for what to add to your .gitignore file**
 1. .DS_Store
 2. *.swp
