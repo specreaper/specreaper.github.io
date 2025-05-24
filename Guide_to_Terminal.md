@@ -8,7 +8,8 @@
 ## Files <br>
 - vi/vim  "file name" : this creates and opens files and what I mean by vi/vim is you can type there vi or vim its up to prefrence they do the same thing.
 - rm "file name" : this removes files.
-- mv "file name" "file name"/"directory name" : this will rename a file or move a file.
+- mv "file name" "new file name" : this will rename the a file
+- mv "file name" "directory name" : this will move a file to the directory to named. (if the directory you want to move the file to is not in the same directory of the file you wish to move you will need to tell it the path of where you want to move it)
 
 ## Directories <br>
 - cd "directory name" : this opens directories.
@@ -16,7 +17,8 @@
 - cd ~ : this takes you back to the home directory.
 - mkdir "directory name" : this creates directories.
 - rmdir "directory name" : this removes directories.
-- mv "directory name" "directory name" : this will rename a directory or move it.
+- mv "directory name" "new directory name/location" : this will rename a directory or move it. (if the directory you want to move the directory to is not in the same directory of the directory you wish to move you will need to tell it the path of where you want to move it)
+
 
 ## File Type <br>
 - ."file name" : this is a hidden file.
