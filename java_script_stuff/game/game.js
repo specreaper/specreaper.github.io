@@ -68,7 +68,7 @@ function drawBackground(){
 	ctx.fillStyle = 'cyan';
 	ctx.fillRect(0,0,500,500);
 	ctx.fillStyle = 'green';
-	ctx.fillRect(0,400,500,100);
+	ctx.fillRect(0,440,500,60);
 }
 
 function movePlayer(){
@@ -90,7 +90,7 @@ function movePlayer(){
 	if(keys['a'] && player.x < 0){
 	    player.x = 500;
   	}
-	if(keys['s'] && player.y >= 400){
+	if(keys['s'] && player.y >= 410){
         	player.y -= player.speed;
     	}
 
