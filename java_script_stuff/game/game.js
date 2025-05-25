@@ -108,14 +108,17 @@ function moveEnemy(){
 
 function hit(){
 	//Facing Right Hitbox
+	//Body
 	let px_max1 = player.x + 30;
 	let px_min1 = player.x;
 	let py_max1 = player.y + 20;
 	let py_min1 = player.y;
+	//Head
 	let px_max2 = player.x + 35;
         let px_min2 = player.x + 25;
         let py_max2 = player.y + 10;
         let py_min2 = player.y - 10;
+	//Legs
 	let px_max3 = player.x + 25;
         let px_min3 = player.x + 15;
         let py_max3 = player.y + 20;
@@ -154,7 +157,7 @@ function hit(){
                         gamerunning = false;
                 }
 	}
-	//Collision For Facing Right
+	//Collision For Facing Left
 	else if(keys['a']){
 	
 	}
