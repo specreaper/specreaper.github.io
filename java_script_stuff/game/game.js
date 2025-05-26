@@ -18,12 +18,14 @@ const player = {
 	ground : true,
 }
 const enemy = [];
-	enemy.push({
-		x : (Math.random() * 400),
-        	y : -45,
-        	dy : (Math.random() * 5) + 1,
-        	color: 'silver',
-	});
+	for(let i=0; i<2; i++){
+		enemy.push({
+			x : (Math.random() * 400),
+        		y : -45,
+        		dy : (Math.random() * 5) + 1,
+        		color: 'silver',
+		});
+	}
 const grass = {
 	spacing : 10,
 	height : ((Math.random() * 2) + 3) * -1,
@@ -150,10 +152,10 @@ function movePlayer(){
 function moveEnemy(){
 	for(let i=0; i<enemy.length; i++){
 		enemy[i].y += enemy[i].dy;
-	    	if(enemy.y > 500){
-			enemy.y = 0;
-			enemy.dy = (Math.random() * 5) + 2;
-			enemy.x = (Math.random() * 400);
+	    	if(enemy[i].y > 500){
+			enemy[i].y = -45;
+			enemy[i].dy = (Math.random() * 5) + 2;
+			enemy[i].x = (Math.random() * 400);
 	    	}
 	}
 }
@@ -194,14 +196,14 @@ function hit(){
         	let py_min6 = player.y + 20;
 	
 		//Enemy Hitbox
-		let ex_max1 = enemy.x + 50;
-		let ex_min1 = enemy.x;
-		let ey_max1 = enemy.y + 20;
-		let ey_min1 = enemy.y;
-		let ex_max2 = enemy.x + 40;
-        	let ex_min2 = enemy.x + 10;
-        	let ey_max2 = enemy.y + 40;
-        	let ey_min2 = enemy.y + 20;
+		let ex_max1 = enemy[i].x + 50;
+		let ex_min1 = enemy[i].x;
+		let ey_max1 = enemy[i].y + 20;
+		let ey_min1 = enemy[i].y;
+		let ex_max2 = enemy[i].x + 40;
+        	let ex_min2 = enemy[i].x + 10;
+        	let ey_max2 = enemy[i].y + 40;
+        	let ey_min2 = enemy[i].y + 20;
 	
 		//Collision For Facing Right
 		if(keys['d']){	
@@ -271,13 +273,13 @@ function hit(){
 
 function drawScore(){
 	ctx.fillStyle = 'black';
-	ctx.font = "30px Arial";
+	ctx.font = "30px Jersey 10, sans-serif";
 	ctx.fillText(Math.floor(score/60), 10,30);
 }
 
 function drawGameOver(){
 	ctx.fillStyle = 'red';
-	ctx.font = "50px Arial";
+	ctx.font = "50px Jersey 10, sans-serif";
 	ctx.fillText("GAME OVER", 100,200);
 	ctx.fillText("your score is: " + Math.floor(score/60), 100,260);
 }
