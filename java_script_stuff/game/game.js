@@ -25,8 +25,8 @@ const enemy = {
 	color: 'silver',
 }
 const grass = {
-	spacing = 10,
-	height = ((Math.random() * 2) + 3) * -1,
+	spacing : 10,
+	height : ((Math.random() * 2) + 3) * -1,
 }
 
 const keys = {};
@@ -79,8 +79,8 @@ function drawBackground(){
 	ctx.fillRect(0,0,500,500);
 	ctx.fillStyle = 'green';
 	ctx.fillRect(0,440,500,60);
-	for(let i=0; i < canvas.width; i+=space){
-		ctx.fillRect(i,410,3,grass.height);
+	for(let i=0; i <= canvas.width; i+=grass.spacing){
+		ctx.fillRect(i,440,3,grass.height);
 		grass.height = ((Math.random() * 2) + 3) * -1;
 	}
 }
