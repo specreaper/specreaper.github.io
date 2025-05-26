@@ -17,21 +17,23 @@ const player = {
 	gravity : 0.1,
 	ground : true,
 }
-const enemy = {
-    	x : (Math.random() * 400),
-	y : 0,
-	dy : (Math.random() * 5) + 1,
-	color: 'silver',
-}
+const enemy = [];
+	enemy.push({
+		x : (Math.random() * 400),
+        	y : 0,
+        	dy : (Math.random() * 5) + 1,
+        	color: 'silver',
+	});
 const grass = {
 	spacing : 10,
 	height : ((Math.random() * 2) + 3) * -1,
 }
-const cloud = {
-	x : -120,
-	y : (Math.random() * 150) + 50,
-	speed : 1,
-}
+const cloud = [];
+	cloud.push({
+		x : -120,
+		y : (Math.random() * 120) + 40,
+		speed : (Math.random() * 0.5) + 0.5,
+	});
 const keys = {};
 
 function drawEnemy(x,y) {
@@ -40,7 +42,6 @@ function drawEnemy(x,y) {
 	ctx.fillRect(enemy.x+15,enemy.y+20,20,5);
 	ctx.fillRect(enemy.x+10,enemy.y+25,30,15);
 }
-
 function drawPlayer(){
 	//Facing Right
 	if(keys['d']){
@@ -76,23 +77,24 @@ function drawPlayer(){
                 ctx.fillRect(player.x+15,player.y+30,10,5);
 	}
 }
-function drawCloud(){
+function drawCloud(cloud){
 	ctx.fillStyle = 'white';
         ctx.fillRect(cloud.x,cloud.y+20,100,30);
         ctx.fillRect(cloud.x+15,cloud.y,70,25);
         cloud.x -= cloud.speed;
-        if(cloud.x < -80){
-                cloud.y = (Math.random() * 150) + 50;
+        if(cloud.x < -110){
+                cloud.y = (Math.random() * 120) + 40;
                 cloud.x = 550;
         }
 }
-
 function drawBackground(){
 	//sky
 	ctx.fillStyle = 'cyan';
 	ctx.fillRect(0,0,500,500);
-	drawCloud()
-	drawCloud()
+	//clouds
+	for(let i = 0; i < cloud.length; i++){
+		drawCloud(cloud[i]);
+	}
 	//ground
 	ctx.fillStyle = 'green';
 	ctx.fillRect(0,440,500,60);
@@ -115,7 +117,6 @@ function drawBackground(){
 	}
 
 }
-
 function movePlayer(){
     	if(keys[' '] && player.ground){
 	 	player.dy = player.jump;
@@ -146,7 +147,6 @@ function movePlayer(){
     	}
 
 }
-
 function moveEnemy(){
     enemy.y += enemy.dy;
 
@@ -156,7 +156,6 @@ function moveEnemy(){
 	enemy.x = (Math.random() * 400);
     }
 }
-
 function hit(){
 	//Facing Right Hitbox
 	//Body
