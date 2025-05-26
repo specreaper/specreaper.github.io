@@ -17,7 +17,6 @@ const player = {
 	gravity : 0.1,
 	ground : true,
 }
-
 const enemy = {
     	x : (Math.random() * 400),
 	y : 0,
@@ -28,7 +27,11 @@ const grass = {
 	spacing : 10,
 	height : ((Math.random() * 2) + 3) * -1,
 }
-
+const cloud = {
+	x : -120,
+	y : (Math.random() * 150) + 50,
+	speed : 1,
+}
 const keys = {};
 
 function drawEnemy(x,y) {
@@ -73,16 +76,44 @@ function drawPlayer(){
                 ctx.fillRect(player.x+15,player.y+30,10,5);
 	}
 }
+function drawCloud(){
+	ctx.fillStyle = 'white';
+        ctx.fillRect(cloud.x,cloud.y+20,100,30);
+        ctx.fillRect(cloud.x+15,cloud.y,70,25);
+        cloud.x -= cloud.speed;
+        if(cloud.x < -80){
+                cloud.y = (Math.random() * 150) + 50;
+                cloud.x = 550;
+        }
+}
 
 function drawBackground(){
+	//sky
 	ctx.fillStyle = 'cyan';
 	ctx.fillRect(0,0,500,500);
+	drawCloud()
+	drawCloud()
+	//ground
 	ctx.fillStyle = 'green';
 	ctx.fillRect(0,440,500,60);
+	//tree
+	ctx.fillRect(20,340,120,-30);
+	ctx.fillRect(20,310,120,-30);
+	ctx.fillRect(20,280,120,-40);
+	ctx.fillStyle = 'brown';
+	ctx.fillRect(65,440,30,-100);
+	//rock
+	ctx.fillStyle = 'darkgrey';
+	ctx.fillRect(380,440,90,-60);
+	ctx.fillRect(390,380,70,-15);
+	ctx.fillRect(470,440,10,-45);
+	//grass
+	ctx.fillStyle = 'green';
 	for(let i=0; i <= canvas.width; i+=grass.spacing){
 		ctx.fillRect(i,440,3,grass.height);
 		grass.height = ((Math.random() * 2) + 3) * -1;
 	}
+
 }
 
 function movePlayer(){
@@ -255,10 +286,10 @@ function animate() {
 		score++;
 		drawBackground();
 		hit();
-    		drawEnemy();
-    		movePlayer();
     		drawPlayer();
-    		moveEnemy();
+    		drawEnemy();
+		movePlayer();
+		moveEnemy();
 		drawScore();
 	}
 	else{
