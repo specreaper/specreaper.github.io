@@ -3,20 +3,25 @@ const ctx = canvas.getContext("2d");
 
 let x = 0;
 let y = 0;
-let dy = (Math.random() * 5) + 1; 
+let dy = 0; 
 let score = 0;
 let gamerunning = true;
+let ground = true;
 
 const player = {
     	x : 250,
     	y : 410,
-    	speed: 3,
-	gravity : 0.01,
+	dy : 0,
+    	speed : 3,
+	jump : -5,
+	gravity : 0.1,
+	ground : true,
 }
 
 const enemy = {
     	x : (Math.random() * 400),
 	y : 0,
+	dy : (Math.random() * 5) + 1,
 	color: 'silver',
 }
 
@@ -73,20 +78,18 @@ function drawBackground(){
 }
 
 function movePlayer(){
-	let ground = true;
- 	let height = 300;
-    	if(player.y <= 410){
-		ground = true;
+    	if(keys[' '] && player.ground){
+	 	player.dy = player.jump;
+		player.ground = false;
 	}
-	else{
-		ground = false;
+	player.dy += player.gravity;
+	player.y += player.dy;
+	if(player.y >= 410){
+		player.dy = 0;
+		player.y = 410;
+		player.ground = true;
 	}
-
-    	if(keys['space'] && ground = true){
-		while(player.y <= height){
-			player.y -= player.speed;
-		}
-    	}
+	
     	if(keys['a']){
         	player.x -= player.speed;
     	}
@@ -106,11 +109,11 @@ function movePlayer(){
 }
 
 function moveEnemy(){
-    enemy.y += dy;
+    enemy.y += enemy.dy;
 
     if(enemy.y > 500){
 	enemy.y = 0;
-	dy = (Math.random() * 5) + 2;
+	enemy.dy = (Math.random() * 5) + 2;
 	enemy.x = (Math.random() * 400);
     }
 }
