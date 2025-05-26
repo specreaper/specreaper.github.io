@@ -8,9 +8,10 @@ let score = 0;
 let gamerunning = true;
 
 const player = {
-    	x : 200,
-    	y : 300,
+    	x : 250,
+    	y : 410,
     	speed: 3,
+	gravity : 0.01,
 }
 
 const enemy = {
@@ -72,11 +73,19 @@ function drawBackground(){
 }
 
 function movePlayer(){
-    	if(keys['s']){
-    		player.y += player.speed;
-    	}
-    	if(keys['w']){
-        	player.y -= player.speed;
+	let ground = true;
+ 	let height = 300;
+    	if(player.y <= 410){
+		ground = true;
+	}
+	else{
+		ground = false;
+	}
+
+    	if(keys['space'] && ground = true){
+		while(player.y <= height){
+			player.y -= player.speed;
+		}
     	}
     	if(keys['a']){
         	player.x -= player.speed;
@@ -85,10 +94,10 @@ function movePlayer(){
         	player.x += player.speed;
     	}
     	if(keys['d'] && player.x > 500){
-    		player.x = 0;
+    		player.x -= player.speed;
     	}
 	if(keys['a'] && player.x < 0){
-	    player.x = 500;
+	    player.x += player.speed;
   	}
 	if(keys['s'] && player.y >= 410){
         	player.y -= player.speed;
