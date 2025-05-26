@@ -24,7 +24,7 @@ const player = {
 const enemy = [];
 	for(let i=0; i<2; i++){
 		enemy.push({
-			x : (Math.random() * 450),
+			x : (Math.random() * 480),
         		y : -45,
         		dy : (Math.random() * 5) + 1,
         		color: 'silver',
