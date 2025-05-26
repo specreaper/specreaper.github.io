@@ -1,5 +1,9 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
+const link = document.createElement("link");
+link.rel = "stylesheet";
+link.href = "https://fonts.googleapis.com/css2?family=Jersey+10&display=swap";
+document.head.appendChild(link);
 
 let x = 0;
 let y = 0;
@@ -20,7 +24,7 @@ const player = {
 const enemy = [];
 	for(let i=0; i<2; i++){
 		enemy.push({
-			x : (Math.random() * 400),
+			x : (Math.random() * 450),
         		y : -45,
         		dy : (Math.random() * 5) + 1,
         		color: 'silver',
@@ -138,10 +142,10 @@ function movePlayer(){
     	if(keys['d']){
         	player.x += player.speed;
     	}
-    	if(keys['d'] && player.x > 500){
+    	if(keys['d'] && player.x > 455){
     		player.x -= player.speed;
     	}
-	if(keys['a'] && player.x < 0){
+	if(keys['a'] && player.x < 15){
 	    player.x += player.speed;
   	}
 	if(keys['s'] && player.y >= 410){
@@ -273,14 +277,14 @@ function hit(){
 
 function drawScore(){
 	ctx.fillStyle = 'black';
-	ctx.font = "30px Jersey 10, sans-serif";
-	ctx.fillText(Math.floor(score/60), 10,30);
+	ctx.font = "50px 'Jersey 10', sans-serif";
+	ctx.fillText(Math.floor(score/60), 10,35);
 }
 
 function drawGameOver(){
 	ctx.fillStyle = 'red';
-	ctx.font = "50px Jersey 10, sans-serif";
-	ctx.fillText("GAME OVER", 100,200);
+	ctx.font = "60px 'Jersey 10', sans-serif";
+	ctx.fillText("GAME OVER", 100,150);
 	ctx.fillText("your score is: " + Math.floor(score/60), 100,260);
 }
 
