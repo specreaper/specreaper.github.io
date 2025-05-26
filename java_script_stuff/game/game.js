@@ -24,7 +24,7 @@ const player = {
 const enemy = [];
 	for(let i=0; i<2; i++){
 		enemy.push({
-			x : (Math.random() * 480),
+			x : (Math.random() * 450),
         		y : -45,
         		dy : (Math.random() * 5) + 1,
         		color: 'silver',
@@ -159,7 +159,7 @@ function moveEnemy(){
 	    	if(enemy[i].y > 500){
 			enemy[i].y = -45;
 			enemy[i].dy = (Math.random() * 5) + 2;
-			enemy[i].x = (Math.random() * 400);
+			enemy[i].x = (Math.random() * 450);
 	    	}
 	}
 }
