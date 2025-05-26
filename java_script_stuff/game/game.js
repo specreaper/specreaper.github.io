@@ -20,7 +20,7 @@ const player = {
 const enemy = [];
 	enemy.push({
 		x : (Math.random() * 400),
-        	y : 0,
+        	y : -45,
         	dy : (Math.random() * 5) + 1,
         	color: 'silver',
 	});
@@ -36,7 +36,7 @@ const cloud = [];
 	});
 const keys = {};
 
-function drawEnemy(x,y) {
+function drawEnemy(enemy){
 	ctx.fillStyle = enemy.color;
 	ctx.fillRect(enemy.x,enemy.y,50,20);
 	ctx.fillRect(enemy.x+15,enemy.y+20,20,5);
@@ -148,121 +148,124 @@ function movePlayer(){
 
 }
 function moveEnemy(){
-    enemy.y += enemy.dy;
-
-    if(enemy.y > 500){
-	enemy.y = 0;
-	enemy.dy = (Math.random() * 5) + 2;
-	enemy.x = (Math.random() * 400);
-    }
+	for(let i=0; i<enemy.length; i++){
+		enemy[i].y += enemy[i].dy;
+	    	if(enemy.y > 500){
+			enemy.y = 0;
+			enemy.dy = (Math.random() * 5) + 2;
+			enemy.x = (Math.random() * 400);
+	    	}
+	}
 }
 function hit(){
-	//Facing Right Hitbox
-	//Body
-	let px_max1 = player.x + 30;
-	let px_min1 = player.x;
-	let py_max1 = player.y + 20;
-	let py_min1 = player.y;
-	//Head
-	let px_max2 = player.x + 35;
-        let px_min2 = player.x + 25;
-        let py_max2 = player.y + 10;
-        let py_min2 = player.y - 10;
-	//Legs
-	let px_max3 = player.x + 25;
-        let px_min3 = player.x + 15;
-        let py_max3 = player.y + 40;
-        let py_min3 = player.y + 20;
-
-	//Facing Left Hitbox
-	//Body
-        let px_max4 = player.x + 30;
-        let px_min4 = player.x;
-        let py_max4 = player.y + 20;
-        let py_min4 = player.y;
-        //Head
-        let px_max5 = player.x + 5;
-        let px_min5 = player.x - 5;
-        let py_max5 = player.y + 10;
-        let py_min5 = player.y - 10;
-        //Legs
-        let px_max6 = player.x + 20;
-        let px_min6 = player.x + 10;
-        let py_max6 = player.y + 40;
-        let py_min6 = player.y + 20;
-
-	//Enemy Hitbox
-	let ex_max1 = enemy.x + 50;
-	let ex_min1 = enemy.x;
-	let ey_max1 = enemy.y + 20;
-	let ey_min1 = enemy.y;
-	let ex_max2 = enemy.x + 40;
-        let ex_min2 = enemy.x + 10;
-        let ey_max2 = enemy.y + 40;
-        let ey_min2 = enemy.y + 20;
+	for(let i=0; i<enemy.length; i++){
+		//Facing Right Hitbox
+		//Body
+		let px_max1 = player.x + 30;
+		let px_min1 = player.x;
+		let py_max1 = player.y + 20;
+		let py_min1 = player.y;
+		//Head
+		let px_max2 = player.x + 35;
+        	let px_min2 = player.x + 25;
+        	let py_max2 = player.y + 10;
+        	let py_min2 = player.y - 10;
+		//Legs
+		let px_max3 = player.x + 25;
+        	let px_min3 = player.x + 15;
+        	let py_max3 = player.y + 40;
+        	let py_min3 = player.y + 20;
+		
+		//Facing Left Hitbox
+		//Body
+        	let px_max4 = player.x + 30;
+        	let px_min4 = player.x;
+        	let py_max4 = player.y + 20;
+        	let py_min4 = player.y;
+        	//Head
+        	let px_max5 = player.x + 5;
+        	let px_min5 = player.x - 5;
+        	let py_max5 = player.y + 10;
+        	let py_min5 = player.y - 10;
+        	//Legs
+        	let px_max6 = player.x + 20;
+        	let px_min6 = player.x + 10;
+        	let py_max6 = player.y + 40;
+        	let py_min6 = player.y + 20;
 	
-	//Collision For Facing Right
-	if(keys['d']){	
-		if(px_min1 < ex_max1 && px_max1 > ex_min1 && py_min1 < ey_max1 && py_max1 > ey_min1) {
-			gamerunning = false;
+		//Enemy Hitbox
+		let ex_max1 = enemy.x + 50;
+		let ex_min1 = enemy.x;
+		let ey_max1 = enemy.y + 20;
+		let ey_min1 = enemy.y;
+		let ex_max2 = enemy.x + 40;
+        	let ex_min2 = enemy.x + 10;
+        	let ey_max2 = enemy.y + 40;
+        	let ey_min2 = enemy.y + 20;
+	
+		//Collision For Facing Right
+		if(keys['d']){	
+			if(px_min1 < ex_max1 && px_max1 > ex_min1 && py_min1 < ey_max1 && py_max1 > ey_min1) {
+				gamerunning = false;
+			}
+			if(px_min1 < ex_max2 && px_max1 > ex_min2 && py_min1 < ey_max2 && py_max1 > ey_min2) {
+        	        	gamerunning = false;
+        		}
+			if(px_min2 < ex_max1 && px_max2 > ex_min1 && py_min2 < ey_max1 && py_max2 > ey_min1) {
+        		        gamerunning = false;
+        		}
+        		if(px_min2 < ex_max2 && px_max2 > ex_min2 && py_min2 < ey_max2 && py_max2 > ey_min2) {
+        		        gamerunning = false;
+        		}
+			if(px_min3 < ex_max1 && px_max3 > ex_min1 && py_min3 < ey_max1 && py_max3 > ey_min1) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min3 < ex_max2 && px_max3 > ex_min2 && py_min3 < ey_max2 && py_max3 > ey_min2) {
+        	                gamerunning = false;
+        	        }
 		}
-		if(px_min1 < ex_max2 && px_max1 > ex_min2 && py_min1 < ey_max2 && py_max1 > ey_min2) {
-                	gamerunning = false;
-        	}
-		if(px_min2 < ex_max1 && px_max2 > ex_min1 && py_min2 < ey_max1 && py_max2 > ey_min1) {
-        	        gamerunning = false;
-        	}
-        	if(px_min2 < ex_max2 && px_max2 > ex_min2 && py_min2 < ey_max2 && py_max2 > ey_min2) {
-        	        gamerunning = false;
-        	}
-		if(px_min3 < ex_max1 && px_max3 > ex_min1 && py_min3 < ey_max1 && py_max3 > ey_min1) {
-                        gamerunning = false;
-                }
-                if(px_min3 < ex_max2 && px_max3 > ex_min2 && py_min3 < ey_max2 && py_max3 > ey_min2) {
-                        gamerunning = false;
-                }
-	}
-	//Collision For Facing Left
-	else if(keys['a']){
-		if(px_min4 < ex_max1 && px_max4 > ex_min1 && py_min4 < ey_max1 && py_max4 > ey_min1) {
-                        gamerunning = false;
-                }
-                if(px_min4 < ex_max2 && px_max4 > ex_min2 && py_min4 < ey_max2 && py_max4 > ey_min2) {
-                        gamerunning = false;
-                }
-                if(px_min5 < ex_max1 && px_max5 > ex_min1 && py_min5 < ey_max1 && py_max5 > ey_min1) {
-                        gamerunning = false;
-                }
-                if(px_min5 < ex_max2 && px_max5 > ex_min2 && py_min5 < ey_max2 && py_max5 > ey_min2) {
-                        gamerunning = false;
-                }
-                if(px_min6 < ex_max1 && px_max6 > ex_min1 && py_min6 < ey_max1 && py_max6 > ey_min1) {
-                        gamerunning = false;
-                }
-                if(px_min6 < ex_max2 && px_max6 > ex_min2 && py_min6 < ey_max2 && py_max6 > ey_min2) {
-                        gamerunning = false;
-                }
-	}
-	//Collision For Facing Default
-	else{
-		if(px_min1 < ex_max1 && px_max1 > ex_min1 && py_min1 < ey_max1 && py_max1 > ey_min1) {
-                        gamerunning = false;
-                }
-                if(px_min1 < ex_max2 && px_max1 > ex_min2 && py_min1 < ey_max2 && py_max1 > ey_min2) {
-                        gamerunning = false;
-                }
-                if(px_min2 < ex_max1 && px_max2 > ex_min1 && py_min2 < ey_max1 && py_max2 > ey_min1) {
-                        gamerunning = false;
-                }
-                if(px_min2 < ex_max2 && px_max2 > ex_min2 && py_min2 < ey_max2 && py_max2 > ey_min2) {
-                        gamerunning = false;
-                }
-                if(px_min3 < ex_max1 && px_max3 > ex_min1 && py_min3 < ey_max1 && py_max3 > ey_min1) {
-                        gamerunning = false;
-                }
-                if(px_min3 < ex_max2 && px_max3 > ex_min2 && py_min3 < ey_max2 && py_max3 > ey_min2) {
-                        gamerunning = false;
-                }
+		//Collision For Facing Left
+		else if(keys['a']){
+			if(px_min4 < ex_max1 && px_max4 > ex_min1 && py_min4 < ey_max1 && py_max4 > ey_min1) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min4 < ex_max2 && px_max4 > ex_min2 && py_min4 < ey_max2 && py_max4 > ey_min2) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min5 < ex_max1 && px_max5 > ex_min1 && py_min5 < ey_max1 && py_max5 > ey_min1) {
+        	                gamerunning = false;
+        	        }
+       		        if(px_min5 < ex_max2 && px_max5 > ex_min2 && py_min5 < ey_max2 && py_max5 > ey_min2) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min6 < ex_max1 && px_max6 > ex_min1 && py_min6 < ey_max1 && py_max6 > ey_min1) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min6 < ex_max2 && px_max6 > ex_min2 && py_min6 < ey_max2 && py_max6 > ey_min2) {
+        	                gamerunning = false;
+        	        }
+		}
+		//Collision For Facing Default
+		else{
+			if(px_min1 < ex_max1 && px_max1 > ex_min1 && py_min1 < ey_max1 && py_max1 > ey_min1) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min1 < ex_max2 && px_max1 > ex_min2 && py_min1 < ey_max2 && py_max1 > ey_min2) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min2 < ex_max1 && px_max2 > ex_min1 && py_min2 < ey_max1 && py_max2 > ey_min1) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min2 < ex_max2 && px_max2 > ex_min2 && py_min2 < ey_max2 && py_max2 > ey_min2) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min3 < ex_max1 && px_max3 > ex_min1 && py_min3 < ey_max1 && py_max3 > ey_min1) {
+        	                gamerunning = false;
+        	        }
+        	        if(px_min3 < ex_max2 && px_max3 > ex_min2 && py_min3 < ey_max2 && py_max3 > ey_min2) {
+        	                gamerunning = false;
+        	        }
+		}
 	}
 }
 
@@ -279,14 +282,16 @@ function drawGameOver(){
 	ctx.fillText("your score is: " + Math.floor(score/60), 100,260);
 }
 
-function animate() {
+function animate(){
 	if(gamerunning){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		score++;
 		drawBackground();
 		hit();
     		drawPlayer();
-    		drawEnemy();
+    		for (let i=0; i<enemy.length; i++){
+			drawEnemy(enemy[i]);
+		}
 		movePlayer();
 		moveEnemy();
 		drawScore();
