@@ -15,6 +15,15 @@
 				font-family: 'Jersey 10', sans-serif;
 				margin: 5px;
 			}
+			button {
+    				margin: 5px;
+    				font-family: 'Jersey 10', sans-serif;
+				font-size: 300%;
+    				background-color: darkgrey;
+    				border: 1px solid black;
+    				border-radius: 5px;
+    				cursor: pointer;
+  			}
 			.grid{
     	 		   	display:grid;
     	 		   	grid-template-rows: repeat(5, 1fr);
@@ -37,7 +46,7 @@
 			.info{
 				grid-area: 2/1/6/2;
 				border:2px solid black;
-				margin: 10px auto;
+				margin: 10px;
 			}
 			.game{
 				grid-area: 2/2/6/3;
@@ -47,7 +56,8 @@
 			.reset{
 				grid-area: 2/3/6/4;
 				border:2px solid black;
-				margin: 10px auto;
+				margin: 10px;
+				text-align: center;
 			}
         	</style>
     	</head>
@@ -71,6 +81,9 @@
         			</script>
 			</div>
 			<div class="reset">
+				<br>
+				<button onclick="location.reload()">Reset</button>
+				<p style="font-size: 180%">This game was created by Sean Evans.</p>
 			</div>
 		</div>
 	</body>	
