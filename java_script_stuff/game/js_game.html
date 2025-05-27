@@ -1,21 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Animation</title>
-        <style>
-            	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Lobster&display=swap');
-		canvas{
-                	border:1px solid;
-            	}
-        </style>
-    </head>
-    <body>
-        <canvas id="myCanvas"
-                width="500"
-                height="500">
-        </canvas>
-        <script src="game.js">
-        </script>
-    </body>
+	<head>
+       		<title>Animation</title>
+        	<style>
+            		@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Lobster&display=swap');
+			canvas{
+                		border:1px solid;
+            		}
+			hr{
+				width: 95%;
+				border: 2px solid black;
+			}
+			p{
+				font-family: 'Jersey 10', sans-serif;
+				margin: 5px;
+			}
+			.grid{
+    	 		   	display:grid;
+    	 		   	grid-template-rows: repeat(5, 1fr);
+    	 		   	grid-template-columns: 1fr 2fr 1fr;
+    	 		   	max-width: 1100px;
+				max-height: 850px;
+         		   	margin: 0 auto;
+         		   	background-color: #f5f5f5;
+				padding: 20px;
+			}
+			.header{
+				grid-area: 1/1/2/4;
+				border:2px solid black;
+				margin: 10px;
+				text-align: center;
+			}
+			.header p{
+				margin: 0px;
+			}
+			.info{
+				grid-area: 2/1/6/2;
+				border:2px solid black;
+				margin: 10px auto;
+			}
+			.game{
+				grid-area: 2/2/6/3;
+				border:2px solid black;
+				margin: 10px auto;
+			}
+			.reset{
+				grid-area: 2/3/6/4;
+				border:2px solid black;
+				margin: 10px auto;
+			}
+        	</style>
+    	</head>
+	<body>
+		<div class="grid">
+			<div class="header">
+				<p style="font-size: 600%"><strong>Blocky Chicken Run &amp; Jump</strong></p>
+			</div>
+			<div class="info">
+				<p style="text-align: center; font-size: 230%"><strong>Welcome to Blocky Chicken Run &amp; Jump</strong></p>
+				<hr>
+				<p style="font-size: 180%">The goal of this game is dodge the falling anvils for as long as possible.</p>
+				<p style="font-size: 180%">Your controls are A, D, and Space.</p>
+                        </div>
+			<div class="game">
+        			<canvas id="myCanvas"
+                		width="500"
+                		height="500">
+        			</canvas>
+        			<script src="game.js">
+        			</script>
+			</div>
+			<div class="reset">
+			</div>
+		</div>
+	</body>	
 </html>
 
