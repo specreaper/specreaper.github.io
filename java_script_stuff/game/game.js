@@ -305,7 +305,7 @@ function animate(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		score++;
 		drawBackground();
-		hit();
+		//hit();
     		drawPlayer();
 		for (let i=0; i<enemy.length; i++){
 			drawEnemy(enemy[i]);
@@ -330,6 +330,6 @@ document.addEventListener('keydown', handleKeyPress);
 document.addEventListener('keyup', (e) => {
     keys[e.key] = false;
 });
-setInterval(spawnEnemy, 5000);
 
+setInterval(spawnEnemy, 5000);
 animate();
