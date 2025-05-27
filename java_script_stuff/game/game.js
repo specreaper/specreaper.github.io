@@ -39,11 +39,13 @@ const grass = {
 	height : ((Math.random() * 2) + 3) * -1,
 }
 const cloud = [];
-	cloud.push({
-		x : -120,
-		y : (Math.random() * 120) + 40,
-		speed : (Math.random() * 0.5) + 0.5,
-	});
+	for(let i = 0; i<2; i++){
+		cloud.push({
+			x : -120,
+			y : (Math.random() * 120) + 40,
+			speed : (Math.random() * 0.5) + 0.5,
+		});
+	}
 const keys = {};
 
 function drawEnemy(enemy){
