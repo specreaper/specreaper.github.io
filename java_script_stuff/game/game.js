@@ -166,9 +166,12 @@ function moveEnemy(){
 	for(let i=0; i<enemy.length; i++){
 		enemy[i].y += enemy[i].dy;
 	    	if(enemy[i].y > 510){
-			enemy[i].y = -45;
-			enemy[i].dy = (Math.random() * 2000) + 2;
 			enemy[i].x = (Math.random() * 450);
+			enemy[i].y = -45;
+			//Normal speed
+			enemy[i].dy = (Math.random() * 4) + 2;
+			//Funny speed
+			//enemy[i].dy = (Math.random() * 2000) + 2;
 	    	}
 	}
 }
