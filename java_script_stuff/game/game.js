@@ -167,7 +167,7 @@ function moveEnemy(){
 		enemy[i].y += enemy[i].dy;
 	    	if(enemy[i].y > 510){
 			enemy[i].y = -45;
-			enemy[i].dy = (Math.random() * 10000) + 2;
+			enemy[i].dy = (Math.random() * 2000) + 2;
 			enemy[i].x = (Math.random() * 450);
 	    	}
 	}
@@ -316,13 +316,8 @@ function animate(){
 	}
     	requestAnimationFrame(animate);
 }
-
 function handleKeyPress(e){
     	keys[e.key] = true;
-}
-
-if(keys['r']){
-	location.reload();
 }
 
 document.addEventListener('keydown', handleKeyPress);
@@ -332,3 +327,4 @@ document.addEventListener('keyup', (e) => {
 
 setInterval(spawnEnemy, 5000);
 animate();
+
