@@ -28,7 +28,7 @@ function spawnEnemy() {
         	enemy.push({
         		x: Math.random() * 450,
         		y: -45,
-			dy: (Math.random() * 1) + .1,
+			dy: (Math.random() * 4) + 1,
         		color: 'silver',
         	});
     	}
@@ -126,7 +126,7 @@ function drawBackground(){
 	ctx.fillStyle = 'green';
 	for(let i=0; i <= canvas.width; i+=grass.spacing){
 		ctx.fillRect(i,440,3,grass.height);
-		grass.height = ((Math.random() * 2) + 3) * -1;
+		grass.height = ((Math.random() * 3) + 3) * -1;
 	}
 
 }
@@ -167,7 +167,7 @@ function moveEnemy(){
 		enemy[i].y += enemy[i].dy;
 	    	if(enemy[i].y > 510){
 			enemy[i].y = -45;
-			enemy[i].dy = (Math.random() * 10) + 2;
+			enemy[i].dy = (Math.random() * 10000) + 2;
 			enemy[i].x = (Math.random() * 450);
 	    	}
 	}
@@ -321,9 +321,11 @@ function handleKeyPress(e){
     	keys[e.key] = true;
 }
 
+if(keys['r']){
+	location.reload();
+}
 
 document.addEventListener('keydown', handleKeyPress);
-
 document.addEventListener('keyup', (e) => {
     keys[e.key] = false;
 });
