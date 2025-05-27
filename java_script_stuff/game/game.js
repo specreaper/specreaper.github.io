@@ -23,14 +23,6 @@ const player = {
 	ground : true,
 }
 const enemy = [];
-	//for(let i=0; i<2; i++){
-		enemy.push({
-			x : (Math.random() * 450),
-        		y : -45,
-        		dy : (Math.random() * 5) + 1,
-        		color: 'silver',
-		});
-	//}
 function spawnEnemy() {
 	if (enemy.length < maxEnemy) {
         	enemy.push({
@@ -168,7 +160,7 @@ function movePlayer(){
 function moveEnemy(){
 	for(let i=0; i<enemy.length; i++){
 		enemy[i].y += enemy[i].dy;
-	    	if(enemy[i].y > 500){
+	    	if(enemy[i].y > 510){
 			enemy[i].y = -45;
 			enemy[i].dy = (Math.random() * 5) + 2;
 			enemy[i].x = (Math.random() * 450);
@@ -305,7 +297,7 @@ function animate(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		score++;
 		drawBackground();
-		//hit();
+		hit();
     		drawPlayer();
 		for (let i=0; i<enemy.length; i++){
 			drawEnemy(enemy[i]);
