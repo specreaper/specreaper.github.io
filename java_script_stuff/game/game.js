@@ -11,6 +11,7 @@ let dy = 0;
 let score = 0;
 let gamerunning = true;
 let ground = true;
+const maxEnemy = 5;
 
 const player = {
     	x : 250,
@@ -22,14 +23,25 @@ const player = {
 	ground : true,
 }
 const enemy = [];
-	for(let i=0; i<2; i++){
+	//for(let i=0; i<2; i++){
 		enemy.push({
 			x : (Math.random() * 450),
         		y : -45,
         		dy : (Math.random() * 5) + 1,
         		color: 'silver',
 		});
-	}
+	//}
+function spawnEnemy() {
+	if (enemy.length < maxEnemy) {
+        	enemy.push({
+        		x: Math.random() * 450,
+        		y: -45,
+			dy: (Math.random() * 5) + 1,
+        		color: 'silver',
+        	});
+    	}
+}
+
 const grass = {
 	spacing : 10,
 	height : ((Math.random() * 2) + 3) * -1,
@@ -295,7 +307,8 @@ function animate(){
 		drawBackground();
 		hit();
     		drawPlayer();
-    		for (let i=0; i<enemy.length; i++){
+    		setInterval(spawnEnemy, 5000);
+		for (let i=0; i<enemy.length; i++){
 			drawEnemy(enemy[i]);
 		}
 		movePlayer();
