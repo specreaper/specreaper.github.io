@@ -97,6 +97,7 @@ function drawCloud(cloud){
         if(cloud.x < -110){
                 cloud.y = (Math.random() * 120) + 40;
                 cloud.x = 550;
+		speed = (Math.random() * 0.5) + 0.5;
         }
 }
 function drawBackground(){
