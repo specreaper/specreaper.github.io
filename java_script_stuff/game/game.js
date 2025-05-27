@@ -11,7 +11,7 @@ let dy = 0;
 let score = 0;
 let gamerunning = true;
 let ground = true;
-const maxEnemy = 5;
+const maxEnemy = 10;
 
 const player = {
     	x : 250,
@@ -307,7 +307,6 @@ function animate(){
 		drawBackground();
 		hit();
     		drawPlayer();
-    		setInterval(spawnEnemy, 5000);
 		for (let i=0; i<enemy.length; i++){
 			drawEnemy(enemy[i]);
 		}
@@ -331,5 +330,6 @@ document.addEventListener('keydown', handleKeyPress);
 document.addEventListener('keyup', (e) => {
     keys[e.key] = false;
 });
+setInterval(spawnEnemy, 5000);
 
 animate();
