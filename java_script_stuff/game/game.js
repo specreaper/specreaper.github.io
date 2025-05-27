@@ -28,7 +28,7 @@ function spawnEnemy() {
         	enemy.push({
         		x: Math.random() * 450,
         		y: -45,
-			dy: (Math.random() * 5) + 1,
+			dy: (Math.random() * 1) + .1,
         		color: 'silver',
         	});
     	}
@@ -158,14 +158,16 @@ function movePlayer(){
 	if(keys['s'] && player.y >= 410){
         	player.y -= player.speed;
     	}
-
+	if(keys['r']){
+		location.reload();
+	}
 }
 function moveEnemy(){
 	for(let i=0; i<enemy.length; i++){
 		enemy[i].y += enemy[i].dy;
 	    	if(enemy[i].y > 510){
 			enemy[i].y = -45;
-			enemy[i].dy = (Math.random() * 5) + 2;
+			enemy[i].dy = (Math.random() * 10) + 2;
 			enemy[i].x = (Math.random() * 450);
 	    	}
 	}
@@ -186,7 +188,7 @@ function hit(){
 		//Legs
 		let px_max3 = player.x + 25;
         	let px_min3 = player.x + 15;
-        	let py_max3 = player.y + 40;
+        	let py_max3 = player.y + 35;
         	let py_min3 = player.y + 20;
 		
 		//Facing Left Hitbox
@@ -203,7 +205,7 @@ function hit(){
         	//Legs
         	let px_max6 = player.x + 20;
         	let px_min6 = player.x + 10;
-        	let py_max6 = player.y + 40;
+        	let py_max6 = player.y + 35;
         	let py_min6 = player.y + 20;
 	
 		//Enemy Hitbox
@@ -213,7 +215,7 @@ function hit(){
 		let ey_min1 = enemy[i].y;
 		let ex_max2 = enemy[i].x + 40;
         	let ex_min2 = enemy[i].x + 10;
-        	let ey_max2 = enemy[i].y + 40;
+        	let ey_max2 = enemy[i].y + 35;
         	let ey_min2 = enemy[i].y + 20;
 	
 		//Collision For Facing Right
