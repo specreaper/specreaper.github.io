@@ -22,7 +22,12 @@
 
 ## File Type <br>
 - ."file name" : this is a hidden file.
-- "file name".md : this makes a markdown file.
+- "file name".md : this makes a markdown file which is used for making notes.
+- "file name".html : this makes a html file which is how you create websites.
+- "file name".css : this makes a css file which is used for styling websites.
+- "file name".js : this makes a javascript file which can be used to add code to websites.
+- "file name".py : this makes a python file.
+- "file name".cpp : this makes a c++ file.
 
 ## Git <br>
 - git add "file name" : this stages the files you want to upload to your git repository. (step 1)
