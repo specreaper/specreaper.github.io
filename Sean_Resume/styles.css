@@ -6,4 +6,9 @@ p, ul, li{
 	font-family: "Times New Roman", serif;
 	margin: auto 0;
 }
+img, video{ 
+	width: 95%; 
+	display: block; 
+	margin: auto;	
+}
 
