@@ -6,33 +6,45 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
     	<script src="js/init.js"></script>
 	<style>
-	#coolFont {
-		padding: 5px;
-                border: 2px solid red;
-		font-family: "Jersey 15", sans-serif;
-	}
-	#centerImage {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		padding: 5px;
-		border: 2px solid red;
-	}
-	.grid{
-    	    display:grid;
-    	    grid-template-rows: repeat(4, 1fr);
-    	    grid-template-columns: repeat(4, 1fr);
-    	    height:80vh;
-	}
-	.header{
-	    grid-area: 1/1/5/2;
-	}
-	.body{
-            grid-area: 2/1/4/5;
-        }
-	.links{
-            grid-area: 4/1/5/5;
-        }
+		.grid{
+    			display:grid;
+    	 		grid-template-rows: repeat(5, 1fr);
+    	 		grid-template-columns: repeat(4, 1fr;
+    	 		max-width: 1100px;
+			max-height: 850px;			
+         		margin: 0 auto;
+         		background-color: #f5f5f5;
+			padding: 20px;
+		}
+		.header{
+			grid-area: 1/1/2/5;
+			border:2px solid black;
+			margin: 10px;
+			text-align: center;
+		}
+		.info{
+			grid-area: 2/1/6/2;
+			border:2px solid black;
+			margin: 10px;
+		}
+		.photo{
+			grid-area: 2/2/6/4;
+			border:2px solid black;
+			margin: 10px auto;
+		}
+		.links{
+			grid-area: 2/4/6/5;
+			border:2px solid black;
+			margin: 10px;
+			text-align: center;
+		}
+		#centerImage {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 5px;
+			border: 2px solid red;
+		}
 	</style>
     </head>
     <body>
@@ -42,7 +54,6 @@
                 width="200"
                 height="250" 
 		id="centerImage"/>
-	<p id="coolFont"> I thought I would add this random fact that I think this is a cool font I like how pixalilated it is, the font is called Jersey 15</p>
 	<h2><u>Nav Links</u></h2>
 	<ul>
 		<li><a href="index.html">Home</a></li>
