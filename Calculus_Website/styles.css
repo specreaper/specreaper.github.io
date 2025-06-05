@@ -1,9 +1,14 @@
 p {
 	font-size: 150%;
 	text-align: center;
-	margin: 10px 10px 5px 10px;
+	margin: 10px 10px 1px 10px;
+	font-family: georgia;
 }
 ul {
 	margin: 1px 0px;
+	font-family: georgia;
+}
+li, a { 
+	font-family: georgia;
 }
 
