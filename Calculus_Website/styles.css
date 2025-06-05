@@ -2,15 +2,15 @@ p {
 	font-size: 150%;
 	text-align: center;
 	margin: 10px 10px 1px 10px;
-	font-family: georgia;
+	font-family: georgia, "Times New Roman";
 }
 ul {
 	margin: 1px 0px;
-	font-family: georgia;
-	font-size: 120%;
+	font-family: georgia, "Times New Roman";
+	font-size: 110%;
 }
 li, a { 
-	font-family: georgia;
-	font-size: 120%;
+	font-family: georgia, "Times New Roman";
+	font-size: 110%;
 }
 
