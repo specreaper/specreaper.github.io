@@ -4,7 +4,8 @@ hr {
 }
 p, ul, li{
 	font-family: "Times New Roman", serif;
-	margin: auto 0;
+	margin: auto 5px;
+	font-size: 120%;
 }
 img, video{ 
 	width: 95%; 
