@@ -1,14 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
-h1, h2 {
-	font-family: "Jersey 15", sans-serif; 
-}
-body {
-	font-family: "Times New Roman", sans-serif;
-}
-th, td, table {
+th, td, table{
 	border: 2px solid;
 	border-collapse: collapse;
-	font-family: "Times New Roman", sans-serif;
+	font-family: "Jersey 15", "Times New Roman", sans-serif;
 	text-align: center;
+}
+hr{
+	margin: auto;
+	width: 95%;
+	border: 2px solid black;
+}
+p, a, ul, li{
+	font-family: "Jersey 15", "Times New Roman", sans-serif;
+	margin: auto 5px;
+	font-size: 150%;
+}
+img, video{ 
+	width: 95%; 
+	display: block;
+	margin: 5px auto;
+	border: 2px solid black;
 }
 

@@ -9,15 +9,15 @@
 		.grid{
     			display:grid;
     	 		grid-template-rows: repeat(5, 1fr);
-    	 		grid-template-columns: repeat(4, 1fr);
-    	 		max-width: 1100px;
-			max-height: 850px;			
+    	 		grid-template-columns: repeat(3, 1fr);
+    	 		max-width: 1300px;
+			max-height: 750px;			
          		margin: 0 auto;
          		background-color: #f5f5f5;
 			padding: 20px;
 		}
 		.header{
-			grid-area: 1/1/2/5;
+			grid-area: 1/1/2/4;
 			border:2px solid black;
 			margin: 10px;
 			text-align: center;
@@ -28,12 +28,13 @@
 			margin: 10px;
 		}
 		.photo{
-			grid-area: 2/2/6/4;
+			grid-area: 2/2/6/3;
 			border:2px solid black;
 			margin: 10px auto;
+			background-color: #B87333;
 		}
 		.links{
-			grid-area: 2/4/6/5;
+			grid-area: 2/3/6/4;
 			border:2px solid black;
 			margin: 10px;
 			text-align: center;
@@ -42,31 +43,33 @@
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
-			padding: 5px;
-			border: 2px solid red;
 		}
 	</style>
     </head>
     <body>
-	<h1>About Me</h1>
-	<p>My name is Sean Evans I'm a Asian Americian that was born and raised in Arlington Virginia. During my years of highschool so far as 11th grade in terms of DE classes I have taken Computer Programming Princaples and Introduction to Problem Solving and Programming. This year I am taking Web Design and Devolpment, Object-Oriented Programming, and Pre-Calculus.</p>
-	<img src="SelfyOfSean.jpeg" alt="Photo of Sean Evans"
-                width="200"
-                height="250" 
-		id="centerImage"/>
-	<h2><u>Nav Links</u></h2>
-	<ul>
-		<li><a href="index.html">Home</a></li>
-		<li><a href="art.html">Art</a></li>
-		<li><a href="projects_hub.html">Projects</a></li>
-	</ul>
-	<h2><u>Classwork Links: Semester 2</u></h2>
-        <ul>
-		<li><a href="form_practice.html">Form Practice</a></li>
-		<li><a href="image_gallery/index.html">Image Gallery</a></li>
-		<li><a href="animation/animation.html">Animation</a></li>
-		<li><a href="java_script_stuff/game/js_game.html">Game</a></li>
-	</ul>
+	    <div class="grid">
+		    	<div class="header">
+				<p style="font-size: 600%">Sean's Website</p>
+			</div>
+			<div class="info">
+			    	<p style="font-size: 300%; text-align: center">About Me</p>
+				<hr>
+				<p>My name is Sean Evans I'm a Asian Americian that was born and raised in Arlington Virginia. During my years of highschool so far as 11th grade in terms of DE classes I have taken Computer Programming Princaples and Introduction to Problem Solving and Programming. This year I am taking Web Design and Devolpment, Object-Oriented Programming, and Pre-Calculus.</p>
+			</div>
+			<div class="photo">
+				<img src="SelfyOfSean.jpeg" alt="Photo of Sean Evans" id="centerImage"/>
+			</div>
+			<div class="links">
+				<p style="font-size: 300%; text-align: center">Nav Links</p>
+				<hr>
+				<div style="font-size: 200%; text-align: center">
+					<a href="index.html">Home</a> <br>
+					<a href="Sean_Resume/resume.html">Resume</a> <br>
+					<a href="projects_hub.html">Projects</a><br>
+					 <a href="java_script_stuff/game/js_game.html">Game</a> <br>
+				</div>
+			</div>
+	    </div>
     </body>
 </html>
 
