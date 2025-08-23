@@ -131,7 +131,7 @@ function drawBackground(){
 
 }
 function movePlayer(){
-    	if(keys[' '] && player.ground){
+    	if(keys['w'] && player.ground){
 	 	player.dy = player.jump;
 		player.ground = false;
 	}
@@ -155,9 +155,6 @@ function movePlayer(){
 	if(keys['a'] && player.x < 15){
 	    player.x += player.speed;
   	}
-	if(keys['s'] && player.y >= 410){
-        	player.y -= player.speed;
-    	}
 	if(keys['r']){
 		location.reload();
 	}
