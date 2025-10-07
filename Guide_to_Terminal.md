@@ -6,13 +6,14 @@
 - ls -a : this lists all files and directories including hidden ones.
 
 ## Files <br>
-- vi/vim  "file name" : this creates and opens files and what I mean by vi/vim is you can type there vi or vim its up to prefrence they do the same thing.
+- vi/vim  "file name" : this creates and opens files and what I mean by vi/vim is you can type there vi or vim its up to prefrence as they do the same core thing its just vim is the updated version of vi.
 - rm "file name" : this removes files.
 - mv "file name" "new file name" : this will rename the a file
 - mv "file name" "directory name" : this will move a file to the directory to named. (if the directory you want to move the file to is not in the same directory of the file you wish to move you will need to tell it the path of where you want to move it)
 
 ## Directories <br>
 - cd "directory name" : this opens directories.
+- cd .. : go to one directory up your branch.
 - cd - : this opens the last openned directory.
 - cd ~ : this takes you back to the home directory.
 - mkdir "directory name" : this creates directories.
@@ -37,6 +38,7 @@
 
 ## Tips <br>
 **More will be added in the future**
+- . : can be used at the end of git add instead of a file name to upload all changes made in the directory.
 - tab : this is your friend and also its auto complete.
 ### .vimrc
 - Make a .vimrc file to customize your terminal too look how you want. <br>
